@@ -1,0 +1,31 @@
+﻿@using Vidly2.Models
+@model IEnumerable<Vidly2.Models.Customer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+
+@if (!Model.Any())
+{
+    <p>We don't have any customers yet</p>
+}
+else
+{
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Customers</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var cutomer in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(cutomer.Name, "Details", "Customers", new {id = cutomer.Id}, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
