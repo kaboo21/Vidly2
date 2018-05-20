@@ -11,19 +11,22 @@
 }
 else
 {
+    @Html.ActionLink("New Movie", "MovieForm", "Movies", new { id = 6 }, new { @class = "btn btn-primary btn-large" })
     <table class="table table-bordered table-hover">
         <thead>
-                <tr>
-                    <th>Movie</th>
-                </tr>
+            <tr>
+                <th>Movie</th>
+                <th>Genre</th>
+            </tr>
         </thead>
         <tbody>
             @foreach (var movie in Model)
-             {
-            <tr>
-                <td>@Html.ActionLink(movie.Name, "Details", "Movies", new { id = movie.Id }, null)</td>
-            </tr>
-             }
+            {
+                <tr>
+                    <td>@Html.ActionLink(movie.Name, "Edit", "Movies", new { id = movie.Id }, null)</td>
+                    <td>@movie.Genre.Name</td>
+                </tr>
+            }
         </tbody>
     </table>
 }
