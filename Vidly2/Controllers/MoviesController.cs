@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net.Mime;
 using System.Web;
 using System.Web.Mvc;
 using Vidly2.Models;
@@ -20,9 +21,8 @@ namespace Vidly2.Controllers
         // GET: Movies/Randome
         public ActionResult Index ()
         {
-            var movies = _context.Movies.Include(c=>c.Genre).ToList();
 
-            return View(movies);
+            return View();
         }
 
         public ActionResult MovieForm()
@@ -82,6 +82,8 @@ namespace Vidly2.Controllers
             var movie = _context.Movies.Include(c=>c.Genre).SingleOrDefault(c => c.Id == id);
             return View(movie);
         }
+
+     
 
         
     }
