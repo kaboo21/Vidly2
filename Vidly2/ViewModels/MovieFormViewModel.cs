@@ -31,6 +31,11 @@ namespace Vidly2.ViewModels
         [Display(Name = "Number in Stock")]
         public byte? NumberInStock { get; set; }
 
+        [Required]
+        [NumbeAvailableRange]
+        public byte? NumberAvailable { get; set; }
+
+
         public MovieFormViewModel()
         {
             Id = 0;
@@ -42,6 +47,7 @@ namespace Vidly2.ViewModels
             Name = movie.Name;
             ReleaseDate = movie.ReleaseDate;
             NumberInStock = movie.NumberInStock;
+            NumberAvailable = movie.NumberAvailable;
             GenreId = movie.GenreId;
         }
     }

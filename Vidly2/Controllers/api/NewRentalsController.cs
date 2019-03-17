@@ -38,11 +38,11 @@ namespace Vidly2.Controllers.api
                     Movie = movie,
                     DateRanted = DateTime.Now
                 };
-
                 _context.Rentals.Add(rental);
+                _context.SaveChanges();
             }
 
-            throw new NotImplementedException();
+            return Ok();
         }
     }
 

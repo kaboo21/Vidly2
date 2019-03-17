@@ -43,6 +43,12 @@ else
         @Html.ValidationMessageFor(m => m.NumberInStock)
     </div>
 
+    <div class="form-group">
+        @Html.LabelFor(m => m.NumberAvailable)
+        @Html.TextBoxFor(m => m.NumberAvailable, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.NumberAvailable)
+    </div>
+
     @Html.HiddenFor(x => x.DateAdded, new { @Value = @DateTime.Now.ToShortDateString() })
 
     @Html.ValidationMessageFor(m => m.DateAdded)
